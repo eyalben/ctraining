@@ -81,6 +81,10 @@ int main(void)
     */
 
 
+    // typedef void (*void_function)(void);
+    // typedef int32_t (*math_function)(int32_t, int32_t);
+
+
     return 0;
 }
 
