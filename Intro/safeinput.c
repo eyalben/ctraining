@@ -35,6 +35,9 @@ int main(void)
     // printf("Dynamic: %s\n", dynamic);
     // free(dynamic);
 
+    // Method 5: Windows Only
+    // TBD: scanf_s
+
 
     return 0;
 }
