@@ -1,3 +1,3 @@
-# C Progamming Language Training
+# C Progamming Language Training Drafts
 
-Classroom examples for C Programming Course
+Drafts for examples shown in class during C Programming Course
