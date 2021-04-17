@@ -15,7 +15,7 @@ The syllabus is as follows:
 
 5. Linking & Compiling - W.I.P
 
-6. APIs - **Missing** - Unknown status
+6. APIs - **Missing** - Removed
 
 7. Strings and Dynamic allocation
 
