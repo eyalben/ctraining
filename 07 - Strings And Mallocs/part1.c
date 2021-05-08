@@ -41,6 +41,22 @@ int main(void)
     g_question1[5] = '!';
     printf("Hodor? %s\n", g_question1);
 
+    // All annoying questions answered:
+
+    char * name_string = "hodor";
+    g_question1[3] = 1; // OK
+    // g_question1++; // not allowed
+    // g_question2[2] = 1; // segmentation fault
+    g_question2 = g_question1;
+    g_question2[2] = 1; // OK
+    name1[3] = 1; // OK
+    // name_string[2] = 1; // segmentation fault
+    name_string = name1;
+    name_string[2] = 1; // OK
+
+    // Advanced:
+    // show that gcc -m32 -S compiles the below into the stack
+    // char name1[] = { "AAAA" }; => hex(1094795585)
 
     return 0;
 }

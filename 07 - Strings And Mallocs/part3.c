@@ -17,9 +17,9 @@ void free(void *ptr);
 void *malloc(size_t size);
 void *realloc(void *ptr, size_t size);*/
 
-/* TODO: Casting? Should we? Is VS Requires that? 
-    int32_t *arr3 = (int32_t *) malloc(8 * sizeof(int32_t));
-*/
+// Casting from (void *) is unnecessary, as void * is automatically and safely promoted to any other pointer type in this case.
+//          But maybe it is in the conventions?
+
     
 #define MAX_SIZE (30)    
 
@@ -30,8 +30,8 @@ int main(void)
     int32_t *arr2 = malloc(8); /* WRONG */
 
     /* We should use sizeof */
-    int32_t *arr3 = malloc(8 * sizeof(int32_t));
-    /* int32_t *arr3 = malloc(8 * sizeof(*arr3)); */
+    int32_t *arr3 = malloc(8 * sizeof(int32_t)); /* WRONG AGAIN */
+    /* int32_t *arr3 = malloc(8 * sizeof(*arr3)); */  /* Correct yay! */
 
     free(arr1);
     free(arr2);
@@ -53,8 +53,10 @@ int main(void)
     if (NULL == items) 
     {
         /* Handle Error, goto l_cleanup */
+        goto l_cleanup;
     }
 
+l_cleanup:
     /* (4) NEVER Free NULL value */
     if (NULL != items) {
         free(items);
