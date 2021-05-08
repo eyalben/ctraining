@@ -55,7 +55,7 @@ int main(void)
     name_string[2] = 1; // OK
 
     // Advanced:
-    // show that gcc -m32 -S compiles the below into the stack
+    // show that gcc -m32 -S compiles the below into the stack (maybe needs -masm=intel)
     // char name1[] = { "AAAA" }; => hex(1094795585)
 
     return 0;
