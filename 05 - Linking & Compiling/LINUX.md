@@ -24,13 +24,14 @@ void two();
 #endif
 ```
 
-3. Show #include
+3. Show #include, and why do we include ".h" and not ".c" files.
 
 # Calling Convention
 
-Why is the declaration enough for comp[iling?
+Why is the declaration enough for compiling?
 
 First two memory areas:
+```
 .stack R W
 .code R X
 
@@ -63,7 +64,7 @@ PUSH 10
 PUSH 20
 CALL SUM
 EAX contians the result
-
+```
 int32_t exp(int32_t base, int32_t value, int32_t)
 
 # GCC
@@ -93,6 +94,16 @@ PLT stands for Procedure Linkage Table which is, put simply, used to call extern
 
 GOT stands for Global Offsets Table and is similarly used to resolve addresses. Both PLT and GOT and other relocation information
 
+```
 gcc -c -Wall -Werror -fpic foo.c
+
 gcc -shared -o libfoo.so foo.o
+
+file libfoo.so
+ldd foo.c
+
 gcc -L/path/to/search main.c -lfoo
+```
+
+# Static function
+create a static function and show using `nm` and compiling `gcc math.o main.o` it is hidden.

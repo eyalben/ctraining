@@ -22,7 +22,7 @@ int main(void)
     char name4[] = "hodor";
 
     /* Null-Termination is Zero*/
-    printf("Is equal? %d\n", ('\0' == 0);
+    printf("Is equal? %d\n", ('\0' == 0));
 
 
     /* (1) Global vs Data Section vs Stack */
