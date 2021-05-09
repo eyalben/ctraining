@@ -78,10 +78,11 @@ int main(void)
 void dump_mem(uint8_t *ptr, uint16_t size) {
     uint16_t i = 0;
 
-    printf("[%p]:\n", ptr);
+    printf("[%p](%u):\n", ptr, size);
     for (i = 0; i < size; ++i) {
-        printf("\t[%d] = %x\n", i, ptr[i]);
+        printf("\t[%d] = %c\n", i, *ptr);
         ptr++;
+        // and then switch to use the array version to show it also works
     }
 }
 
@@ -89,9 +90,9 @@ void dump_mem(uint8_t *ptr, uint16_t size) {
 void dump_mem2(uint8_t ptr[], uint16_t size) {
     uint16_t i = 0;
 
-    printf("[%p]:\n", ptr);
+    printf("[%p](%u):\n", ptr, size);
     for (i = 0; i < size; ++i) {
-        printf("\t[%d] = %x\n", i, *ptr);
-        ptr++;
+        printf("\t[%d] = %c\n", i, ptr[i]);
+        // and then switch to use the pointers version to show it also works
     }
 }

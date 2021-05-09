@@ -22,7 +22,7 @@ int main(void)
     char name4[] = "hodor";
 
     /* Null-Termination is Zero*/
-    printf("Is equal? %d\n", ('\0' == 0);
+    printf("Is equal? %d\n", ('\0' == 0));
 
 
     /* (1) Global vs Data Section vs Stack */
@@ -41,6 +41,22 @@ int main(void)
     g_question1[5] = '!';
     printf("Hodor? %s\n", g_question1);
 
+    // All annoying questions answered:
+
+    char * name_string = "hodor";
+    g_question1[3] = 1; // OK
+    // g_question1++; // not allowed
+    // g_question2[2] = 1; // segmentation fault
+    g_question2 = g_question1;
+    g_question2[2] = 1; // OK
+    name1[3] = 1; // OK
+    // name_string[2] = 1; // segmentation fault
+    name_string = name1;
+    name_string[2] = 1; // OK
+
+    // Advanced:
+    // show that gcc -m32 -S compiles the below into the stack (maybe needs -masm=intel)
+    // char name1[] = { "AAAA" }; => hex(1094795585)
 
     return 0;
 }
