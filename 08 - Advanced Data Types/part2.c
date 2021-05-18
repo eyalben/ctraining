@@ -39,6 +39,10 @@ void change_point(point_t *p)
 
 int main(void) 
 {
+    /* (2) Initializing */
+    point_t p_example = { .x = 10, .y = 20 };
+    print_point(p_example);
+
     /* (3) Sizeofs */
     point_t p1 = {0};
     complex_t c1 = {0};
@@ -63,10 +67,6 @@ int main(void)
     print_point(p1);  /* structs will be copied entierly */
     change_point(&p1);
     print_point(p1);  /* structs will be copied entierly */
-
-    /* (2) Initializing */
-    point_t p_example = { .x = 10, .y = 20 };
-    print_point(p_example);
 
     return 0;
 }

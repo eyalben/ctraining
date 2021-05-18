@@ -6,7 +6,7 @@
 #include <stdint.h>
 
 enum weather_e {
-    sunny,
+    sunny, //  sunny=0x1000,
     windy,
     cloudy,
     rain,
@@ -25,6 +25,8 @@ int main(void)
 
     /*
     play with init values in enum
+        sunny=0x1000,
+
     */
 
 
@@ -48,7 +50,7 @@ int main(void)
    
    /* (2) Size of Enum */
    weather_t x = 0;
-   printf("Size of enum: %d\n", sizeof(x));
+   printf("Size of enum: %zu\n", sizeof(x));
 
    /*
     Actually there is no standard and the compiler can choose whatever he wants
