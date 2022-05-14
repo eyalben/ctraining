@@ -19,7 +19,7 @@ int main(void)
     double d = 1.5;
 
     unsigned ui = 1234;
-    /* no bool */
+    /* no bool => 0 is false, all other numbers are true */
 
     printf("Size of: %zu\n", sizeof(a));
     printf("Size of: %zu\n", sizeof(s));

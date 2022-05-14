@@ -24,7 +24,7 @@ int main(void)
 
 
     /* (2) Array Duality */
-    uint8_t letters[] = { "robot" };
+    uint8_t letters[] = { 'r', 'o', 'b', 'o', 't' };
     uint8_t *p = NULL;
     
     /* Array duality */
