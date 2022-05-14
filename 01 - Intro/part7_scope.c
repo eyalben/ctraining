@@ -34,6 +34,7 @@ int main(void)
     uint32_t local_var = 6;
     printf("Local Var: %x\n", local_var);
     {
+        // Just keep in mind this is not ANSI-C and sometimes prohibited in coding conventions
         uint32_t local_var = 5;
         printf("Local Var: %x\n", local_var);
     }
