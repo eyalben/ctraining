@@ -23,7 +23,7 @@ int main(void)
     }
 
 
-    /* (2) Initializion types */
+    /* (2) Initialization types */
     int32_t a1[10] = {100, 200, 300}; /* Implicit 0 */
     int32_t a2[] = {10, 20, 30};
     int8_t a3[] = { "Hello" };
