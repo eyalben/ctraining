@@ -45,7 +45,7 @@ int main(void)
     printf("num1 = %d, num2 = %d\n", num1, num2);
 
     /*
-     * (4) Size of pointers
+     * (4) Size of pointers (gcc -m32 to show 32bit sizes)
      */
     int8_t *p1 = NULL;
     int16_t *p2 = NULL;

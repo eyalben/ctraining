@@ -17,7 +17,7 @@ int main(void)
 
     /* (2) Down-Casting */
     uint32_t big = 0xdeadbeef;
-    uint16_t invalid = big;         /* Illegal */
+    uint16_t invalid = big;         /* Illegal  `-Wall -Wconversion -Werror` */
     uint16_t valid = (uint16_t)big; /* Legal */
 
     printf("%x\n", valid);

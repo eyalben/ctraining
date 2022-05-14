@@ -11,7 +11,7 @@ void func(uint32_t x, uint32_t y, uint32_t z)
 
 void func2(void)
 {
-    uint32_t local_var = 0;
+    uint32_t local_var = 0; /* remove `= 0` to make it work */
     printf("Local Var: %x\n", local_var);
     /* printed value is unexpected */
 }
@@ -20,7 +20,7 @@ void static_example(void)
 {
     static uint32_t count = 0;
 
-    printf("Function called %d times\n", count);
+    printf("Function called %d times\n", ++count);
 }
 
 int main(void)
@@ -30,6 +30,15 @@ int main(void)
     func2();
 
     /* (2) Scope */
+
+    uint32_t local_var = 6;
+    printf("Local Var: %x\n", local_var);
+    {
+        // Just keep in mind this is not ANSI-C and sometimes prohibited in coding conventions
+        uint32_t local_var = 5;
+        printf("Local Var: %x\n", local_var);
+    }
+    printf("Local Var: %x\n", local_var);
 
     /* (3) Static Variables */
     static_example();
