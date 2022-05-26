@@ -13,7 +13,7 @@ What if I had 3000 files to do so?
 - Story #1: Long compilation process (OpenOffice Story, Gentoo, 3-days compilation process)
 - (Anecdote for story #1: Intel IA-64 vs x86-64 vs amd64 - not exactly the same - hence different compiler)
 
-There must be a more efficient way (and there is!) - *Diagram #1* - we can `compile` each file separately:
+There must be a more efficient way (and there is!) - _Diagram #1_ - we can `compile` each file separately:
 
 ```
 First we translate the code (the text) to binary:
@@ -63,17 +63,17 @@ gcc -S
 `ld`
 objdump -D lib.o
 
-
 Any more questions of how to separate files or to compile separately?
-
 
 ## Part 2 - Shared Libraries
 
+https://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
+
 We'll start with two stories:
+
 1. Anyone tried to run old games and ran into message like `Could not locate msvcrt97.dll/directx97.dll`?
 2. Background Story: 3D Games, Static Compiling vs Dynamic Compiling (space on disk, ram)
 
 - Demo of how it is done
 - search path
 - -lXXX
-
