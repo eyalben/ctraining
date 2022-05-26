@@ -82,3 +82,12 @@ We'll start with two stories:
 - Demo of how it is done
 - search path
 - -lXXX
+
+## Part 2.1 - Note on the extern keyword
+
+extern changes the linkage. With the keyword, the function / variable is assumed to be available somewhere else and the resolving is deferred to the linker.
+There's a difference between extern on functions and on variables.
+
+For **_variables_** it doesn't instantiate the variable itself, i.e. doesn't allocate any memory. This needs to be done somewhere else. Thus it's important if you want to import the variable from somewhere else.
+
+For **_functions_**, this only tells the compiler that linkage is extern. As this is the default (you use the keyword static to indicate that a function is not bound using extern linkage) you don't need to use it explicitly.
