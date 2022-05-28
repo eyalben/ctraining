@@ -33,9 +33,15 @@ int main(void)
     int32_t *arr3 = malloc(8 * sizeof(int32_t)); /* WRONG AGAIN */
     /* int32_t *arr3 = malloc(8 * sizeof(*arr3)); */  /* Correct yay! */
 
+    // MUST FREE - else memory leaks
     free(arr1);
     free(arr2);
     free(arr3);
+
+    /* WARN - dont free buffer not allocated by malloc
+    int32_t arr[100] = {0};
+    free(arr);
+    */
     
 
     /* (1) Memory is not initialized! */
@@ -45,6 +51,7 @@ int main(void)
 
     /* (2) That's why we use #define */
     int8_t *with_define = malloc(MAX_SIZE * sizeof(*reset));
+    memset(reset, 0, MAX_SIZE * sizeof(*reset));
     free(with_define);
 
 

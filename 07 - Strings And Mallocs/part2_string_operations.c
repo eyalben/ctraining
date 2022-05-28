@@ -73,4 +73,13 @@ strncat - concatenate one string with part of another
 strncmp - compare parts of two strings
 strncpy - copy part of a string
 strrchr - string scanning operation
+
+    char *name1 = "Bonzai";
+    char *name2 = "Tree";
+    char buf[100] = {0};
+    strncat(buf, name1, 100);
+    strncat(buf, " ", 100);
+    strncat(buf, name2, 100);
+    printf("%s\n", buf);
+
 */

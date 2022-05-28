@@ -60,6 +60,7 @@ Preprocessing -> Compiling -> Assembling -> Linking
 gcc -c
 gcc -S
 `nm` command (important!)
+compile with g++ and then run nm to see name demangling
 `ld`
 objdump -D lib.o
 
