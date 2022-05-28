@@ -3,6 +3,7 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 
 int main(int argc, char *argv[]) {
@@ -29,9 +30,28 @@ int main(int argc, char *argv[]) {
     //     twodim[i] = i;
     // }
 
+    // Hey! But how do we make our syntax better?
 
-    /* (3) Alternative syntax (pointer to an array) */
-    // int (*twodim)[4] = malloc( sizeof(*twodim) * 3 );
+    /*
+        Having trouble with casting?
+        One of the "tricks" to know how to properly cast is to compile our code with `-Wc++-compat`
+        The warning will show us how to properly cast :)
+    */
+
+    /* (3.0) The intuative but ugly method */
+    // int32_t (*twodim)[][4] = (int32_t (*)[][4]) malloc( 16 * 3 );
+    // int i = 0, j = 0;
+    // for (i = 0; i < 3; ++i) {
+    //     for (j = 0 ; j < 4; j++) {
+    //         (*twodim)[i][j] = i * j;
+    //     }
+    // }
+
+    // printf("Value: %d\n", (*twodim)[1][2]);
+
+    /* (3) Alternative syntax - Fixing the accessing syntax (pointer to an array) */
+    // (See diagram)
+    // int32_t (*twodim)[4] = (int32_t (*)[4]) malloc( sizeof(*twodim) * 3 );
     // int i = 0, j = 0;
     // for (i = 0; i < 3; ++i) {
     //     for (j = 0 ; j < 4; j++) {
