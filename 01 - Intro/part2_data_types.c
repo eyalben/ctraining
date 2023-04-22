@@ -20,6 +20,7 @@ int main(void)
 
     unsigned ui = 1234;
     /* no bool => 0 is false, all other numbers are true */
+    /* <stdbool.h> was introduced in C99 */
 
     printf("Size of: %zu\n", sizeof(a));
     printf("Size of: %zu\n", sizeof(s));
@@ -31,7 +32,7 @@ int main(void)
 
     /* (1.5) Void Pointer (we'll talk about this later) */
     void *ptr = NULL;
-    printf("Size of: %zu\n", sizeof(ptr));
+    printf("Size of: %zu\n", sizeof(ptr)); /* (1.6) The difference between 32 and 64 */
 
     /* (2) STDINT Data Types */
     int32_t number = 1234;
@@ -55,11 +56,20 @@ int main(void)
 }
 
 /*
-    %d - int (same as %i)
+    %d - signed decimal integers
     %ld - long int (same as %li)
+    %hd - short int
+
+    %u - unsigned short integer
+    %lu - unsigned long int
+    %hu - unsigned short integer
+
     %f - float
     %lf - double[1]
+    
     %c - char
     %s - string
     %x - hexadecimal
+    %o - octal integers
+    %p - pointers
 */

@@ -6,13 +6,13 @@
 
 void func(uint32_t x, uint32_t y, uint32_t z)
 {
-    printf("Valued: %d %d %d\n", x, y, z);
+    printf("[func] Values: %d %d %d\n", x, y, z);
 }
 
 void func2(void)
 {
     uint32_t local_var = 0; /* remove `= 0` to make it work */
-    printf("Local Var: %x\n", local_var);
+    printf("[func2] local_var is: %x\n", local_var);
     /* printed value is unexpected */
 }
 
@@ -30,7 +30,6 @@ int main(void)
     func2();
 
     /* (2) Scope */
-
     uint32_t local_var = 6;
     printf("Local Var: %x\n", local_var);
     {

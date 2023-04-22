@@ -13,7 +13,8 @@ int main(void)
 
     /* (1) Up-Casting */
     uint8_t num = 0b11;
-    uint16_t num2 = num;
+    uint16_t num2 = num; /* implicit casting */
+    uint16_t num3 = (uint16_t) num; /* explicit casting */
 
     /* (2) Down-Casting */
     uint32_t big = 0xdeadbeef;

@@ -4,8 +4,8 @@
     $?
 */
 
-/* Comment */
-// Comment
+/* Comment ANSI C */
+// Comment C99
 
 int main(void)
 {
