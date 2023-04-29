@@ -6,6 +6,25 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#define NELEM(x) (sizeof((x)) / sizeof(x[0]))
+
+void print_mul(int32_t arr[][3], size_t rows) {
+    size_t i = 0;
+    size_t j = 0;
+
+    /* Pay attention to sizes */
+    /* printf("sizeof(arr[0][0]): %zu | sizeof(arr[0]) | sizeof(arr)\n", sizeof(arr[0][0]), sizeof(arr[0]), sizeof(arr)); */
+    /* printf("NELEM of arr[0]: %zu\n", NELEM(arr[0])); */
+
+    for (i = 0 ; i < rows ; i++)
+    {
+        for (j = 0; j < 3; j++) 
+        {
+            printf("Array[%d][%d] = %d\n", i, j, arr[i][j]);
+        }
+    }
+}
+
 int main(void) 
 {
     /* (1) Basic initialization */
@@ -30,6 +49,9 @@ int main(void)
             printf("Array[%d][%d] = %d\n", i, j, a3[i][j]);
         }
     }
+
+    /* (2) Passing to a function */
+    print_mul(a3, 3);
 
     /*
         Memory Layout of A3

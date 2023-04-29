@@ -6,17 +6,18 @@
 #include <stdint.h>
 
 void swap(int32_t *a, int32_t *b);
+void square(uint32_t *num);
 
 int main(void) 
 {
     /*
-     * (1) Basic declarations 
+     * (1) Basic declarations (See diagram)
      */
-    uint16_t value = 0x1337;
-    uint16_t *ptr = &value;
+    uint16_t num = 0xAABB;
+    uint16_t *ptr = &num;
 
-    printf(" value = %x\n", value);
-    printf("&value = %p\n", &value);
+    printf(" num = %x\n", num);
+    printf("&num = %p\n", &num);
     
     printf("&ptr = %p\n", &ptr);
     printf(" ptr = %p\n", ptr);
@@ -24,20 +25,27 @@ int main(void)
 
 
     /* 
-     * (2) Value 
+     * (2) Value (See diagram)
      */
-    value = 0xBEEF;
+    num = 0xBEEF;
     printf("[value = 0xBEEF]\n");
-    printf(" value = %x\n", value);
+    printf(" value = %x\n", num);
     printf("*ptr = %x\n", *ptr);
 
     *ptr = 0xDEAD;
     printf("[*ptr = 0xDEAD]\n");
-    printf(" value = %x\n", value);
+    printf(" value = %x\n", num);
     printf("*ptr = %x\n", *ptr);
 
     /*
-     * (3) Functions
+     * (3) Use #1: Returning a value (or multiple values)
+     */
+    uint32_t cube = 6;
+    square(&cube);
+    printf("Cube: %d\n", cube);
+
+    /*
+     * (3) Use #2: Update in-place multiple values
      */
     int32_t num1 = 100, num2 = 200, num3 = 300;
     printf("num1 = %d, num2 = %d\n", num1, num2);
@@ -59,7 +67,7 @@ int main(void)
 
 
     /* 
-     * (5) Explicit Casting
+     * (5) Explicit vs Implicit Casting
      */
     int8_t letter = 'A';
     int8_t *pointer_to_letter = NULL;
@@ -75,7 +83,7 @@ int main(void)
 
 
     /*
-     * (6) void pointers 
+     * (6) Explicit vs Implicit Casting: Void Pointers
      */
     void *vptr = NULL;
     uint8_t number = 8;
@@ -87,6 +95,12 @@ int main(void)
     printf("Number: %d\n", *number_ptr);
 
 
+    /* 
+     * (6.5) 
+     *         Diagram #1: Little/Big Endian reminder
+     *         Diagram #2: Pointers and casting
+     */
+
     /*
      * (7) Confusing declarations
      */
@@ -94,7 +108,7 @@ int main(void)
 
 
     /* 
-     * (8) Pointer to pointer 
+     * (8) Pointer to pointer (See Diagram)
      */
     uint16_t one = 100;
     uint16_t two = 200;
@@ -111,6 +125,11 @@ int main(void)
     printf("Pointer to Pointer value: %d\n", *ptr_to_ptr == &one);
 
     return 0;
+}
+
+/* replace `void` with `STATUS_t` */
+void square(uint32_t *num) {
+    *num = (*num) * (*num);
 }
 
 void swap(int32_t *a, int32_t *b) 

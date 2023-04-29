@@ -22,28 +22,31 @@ int main(void)
     p32bit += 1;
     printf("8-bit: %p, 32-bit: %p\n", p8bit, p32bit);
 
+    /* (2) Diagram: Pointers arithmetics diagram */
 
-    /* (2) Array Duality */
-    uint8_t letters[] = { 'r', 'o', 'b', 'o', 't' };
-    uint8_t *p = NULL;
+    /* (2) Array / Pointer Duality */
+    uint8_t arr[] = { 'r', 'o', 'b', 'o', 't' };
+    uint8_t *ptr = NULL;
     
-    /* Array duality */
-    printf("Equal addresses: %p == %p\n", letters, &letters);
+    /* Notice: Different Types */
+    printf("Equal addresses: %p == %p\n", arr, &arr);
 
     /* Looping an array using pointer arithmetics */
-    p = letters;
-    for (i = 0; i < sizeof(letters); i++) {
-        printf("[%d] = %c\n", i, *p);
-        p++;
+    ptr = arr;
+    for (i = 0; i < sizeof(arr); i++) {
+        printf("[%d] = %c\n", i, *(arr + i));
+        printf("[%d] = %c\n", i, *(ptr + i));
+        printf("[%d] = %c\n", i, arr[i]);
+        printf("[%d] = %c\n", i, ptr[i]);
     }
 
     /* Pointer duality */
-    printf("Those values are equals: %c == %c\n", *(letters+4), letters[4]);
+    printf("Those values are equals: %c == %c\n", *(arr+4), arr[4]);
 
 
     /* (3) Pointers and Arguments */
-    dump_mem(letters, sizeof(letters));
-    dump_mem2(letters, sizeof(letters));
+    dump_mem(arr, sizeof(arr));
+    dump_mem2(arr, sizeof(arr));
     
     
     /* (4) Mother of all problems (FML) */
