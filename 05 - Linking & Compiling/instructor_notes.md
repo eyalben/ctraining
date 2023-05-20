@@ -46,7 +46,7 @@ Preprocessing -> Compiling -> Assembling -> Linking
 5. Copy declarations to `math.c` - it'll now detect the error (fix it!)
 6. Put declaration in a shared file called `math.h` :)
 
-### Awesome - let's talk about Linking Process
+### Awesome - let's talk about preprocessor
 
 `gcc -E`
 
