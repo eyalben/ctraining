@@ -105,7 +105,7 @@ ldd foo.c
 gcc -L/path/to/search main.c -lfoo -o main
 ./main
 
-# running ./main will not work
+# running ./main might not work
 LD_LIBRARY_PATH=/home/.../pathtolib/...:$LD_LIBRARY_PATH ./main
 ```
 
