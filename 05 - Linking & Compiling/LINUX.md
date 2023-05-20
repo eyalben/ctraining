@@ -102,7 +102,11 @@ gcc -shared -o libfoo.so foo.o
 file libfoo.so
 ldd foo.c
 
-gcc -L/path/to/search main.c -lfoo
+gcc -L/path/to/search main.c -lfoo -o main
+./main
+
+# running ./main will not work
+LD_LIBRARY_PATH=/home/.../pathtolib/...:$LD_LIBRARY_PATH ./main
 ```
 
 # Static function

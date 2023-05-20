@@ -65,6 +65,7 @@ compile with g++ and then run nm to see name demangling
 `gcc main.o math.o -o main`
 `ld`
 objdump -D lib.o
+objdump -s
 
 Any more questions of how to separate files or to compile separately?
 
