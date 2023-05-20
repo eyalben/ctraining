@@ -54,6 +54,7 @@ Preprocessing -> Compiling -> Assembling -> Linking
 2. Multiple import issues
 3. Header Guards
 4. Pragma Once (and Pragma)
+5. Why to never put code in header files!
 
 ### Separating compilation process
 
