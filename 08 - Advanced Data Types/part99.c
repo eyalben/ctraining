@@ -30,7 +30,7 @@ void print_error(error_codes_t err)
     error_codes_t i = 0;
     if (0 != err)
     {
-        printf("Error occurrred:\n");
+        printf("Error occurred:\n");
 
         /* find error */
         for (i = 0; i < NELEM(g_error_desc); ++i)
