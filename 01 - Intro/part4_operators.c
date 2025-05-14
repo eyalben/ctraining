@@ -5,9 +5,9 @@
 #include <stdint.h>
 
 /* (3) */
-#define BITFLAG1 (1) /* 0...0001 */
-#define BITFLAG2 (2) /* 0...0010 */
-#define BITFLAG3 (4) /* 0...0100 */
+#define O_READ   (0b00000001)
+#define O_WRITE  (0b00000010)
+#define O_APPEND (0b00000100)
 
 int main(void)
 {
@@ -33,16 +33,24 @@ int main(void)
     printf("value after: %d\n", value2);
 
     // (3) Bitwise Operators (e.g. let's talk about bitflags)
-    int32_t bitbucket = 2; /* 0b0010 */
-    bitbucket = bitbucket | 0b1;
-    printf("Bit bucket value: %d\n", bitbucket);
+    uint8_t bitwise_or = 0b00000001 | 0b00000010;
+    uint8_t bitwise_and = 0b00001111 & 0b11110001;
+    uint8_t bitwise_xor = 0b110 ^ 0b011;
+    bitwise_of |= 0b100;
 
     // (4) Bit Flags
-    //     For Example:
-    //         open("filename", O_READ | O_WRITE)
-    bitbucket |= BITFLAG1;  /* Set bit flag 1 */
-    bitbucket &= ~BITFLAG2; /* Clear bit flag 2 */
-    bitbucket ^= BITFLAG3;  /* Flip the state of bit flag 3 from off to on or */
+    uint8_t flags = O_OPEN | O_WRITE; // 0b00000001 | 0b00000010 = 0b00000011
+
+    // Test if flag is set
+    if (flags & O_OPEN)
+    {
+        printf("Flag of open if set\n");
+    }
+
+    // Flags manipulation
+    flags |= O_APPEND; // Add append flag
+    flags &= ~O_WRITE; // Clear the write flag
+    flags ^= O_APPEND; // Flip the state of the append flag
 
     /* (5) Shift operators */
     printf("24 shift left once is %d\n", 25 << 1);
@@ -53,7 +61,7 @@ int main(void)
     printf("Logical Operators result is: %d\n", (1 == 1) && (2 == 2));
     printf("Logical Operators result is: %d\n", (3 == 1) && (2 == 2));
 
-    /* C is NOT javascript*/
+    /* Note: C is NOT javascript*/
     printf("Logical Operators result is: %d\n", 5 || 3);
 
     // (7) Conditional Operator

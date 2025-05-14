@@ -7,7 +7,7 @@
 int main(void)
 {
     /* (1) While loops */
-    int result = 1;
+    uint32_t result = 1;
     int start = 4;
     while (start > 0)
     {

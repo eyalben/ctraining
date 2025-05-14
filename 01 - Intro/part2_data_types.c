@@ -60,7 +60,7 @@ int main(void)
     %ld - long int (same as %li)
     %hd - short int
 
-    %u - unsigned short integer
+    %u - unsigned integer
     %lu - unsigned long int
     %hu - unsigned short integer
 
@@ -72,4 +72,6 @@ int main(void)
     %x - hexadecimal
     %o - octal integers
     %p - pointers
+
+    %zu - size_t / sizeof()
 */

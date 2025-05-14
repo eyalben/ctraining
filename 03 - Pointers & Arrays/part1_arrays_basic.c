@@ -10,6 +10,18 @@
 /* (5) */
 void print_array(int32_t arr[], uint32_t size);
 
+/* (6) Bad Macros */
+#define BAD_SQUARE(x) x * x
+#define SQUARE(x) ((x) * (x))
+
+void bad_vs_good_macro(void) 
+{
+    int32_t a = 1;
+    printf("Bad Square: %d\n",  BAD_SQUARE(a + 1));
+    printf("Good Square: %d\n", SQUARE(a + 1));
+    // BAD_SQUARE(a + 1) ==> a + 1 * a + 1
+}
+
 int main(void) 
 {
     /* (1) Basic initialization */ 

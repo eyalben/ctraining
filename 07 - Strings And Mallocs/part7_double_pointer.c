@@ -23,7 +23,7 @@ MY_LIB_status_t MY_LIB_init(int32_t **item, int32_t size) {
 
     if (NULL == new_array) {
         status = MYLIB_MEMORY_ERROR;
-        goto cleanup;
+        goto l_cleanup;
     }
 
     // Reset Values immediately (that's why I didn't use memset)
@@ -33,7 +33,7 @@ MY_LIB_status_t MY_LIB_init(int32_t **item, int32_t size) {
 
     *item = new_array;
 
-cleanup:
+l_cleanup:
     return status;
 }
 

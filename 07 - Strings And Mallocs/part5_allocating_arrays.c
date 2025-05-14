@@ -8,21 +8,21 @@
 
 int main(int argc, char *argv[]) {
 
-    /* (1) How to set a pointer to an array */
+    /* (1) How to set a "pointer to an array" - naive syntax (we saw a better way) */
     char name1[] = { "hodor" }; /* 6 bytes */
     char (*ptr)[] = NULL; /* This is a pointer to an array */
 
     ptr = &name1;
     printf("First letter is: %c\n", (*ptr)[0]);
 
-    /* (2) Dynamic allocation of NxM array */
+    /* (2) Dynamic allocation of NxM array - Approach 1 */
     int *twodim = (int *) malloc(3 * 4 * sizeof(int));
 
     /* alternative syntax: */
     // int *twodim = (int *) malloc(sizeof(int[3][4]));
 
     /* You can see sizes are equal */
-    // printf("Sizeof: %ld == %ld\n", sizeof(int[3][4]), 3 * 4 * sizeof(int) );
+    printf("Sizeof: %ld == %ld\n", sizeof(int[3][4]), 3 * 4 * sizeof(int) );
 
     /* usage examples (first and second alrenatives) */
     // int i = 0;
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
     //     twodim[i] = i;
     // }
 
-    // Hey! But how do we make our syntax better?
+    // Hey! But how do we make our syntax better? <===
 
     /*
         Having trouble with casting?
@@ -48,6 +48,9 @@ int main(int argc, char *argv[]) {
     // }
 
     // printf("Value: %d\n", (*twodim)[1][2]);
+
+
+    // Hey! But how do we make our syntax even more better? <===
 
     /* (3) Alternative syntax - Fixing the accessing syntax (pointer to an array) */
     // (See diagram)
