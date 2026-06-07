@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     // int *twodim = (int *) malloc(sizeof(int[3][4]));
 
     /* You can see sizes are equal */
-    printf("Sizeof: %ld == %ld\n", sizeof(int[3][4]), 3 * 4 * sizeof(int) );
+    printf("Sizeof: %zu == %zu\n", sizeof(int[3][4]), 3 * 4 * sizeof(int) );
 
     /* usage examples (first and second alrenatives) */
     // int i = 0;

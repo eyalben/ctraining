@@ -47,8 +47,8 @@ int main(void)
     point_t p1 = {0};
     complex_t c1 = {0};
 
-    printf("Size of p1: %ld\n", sizeof(p1));
-    printf("Size of c1: %ld\n", sizeof(c1));
+    printf("Size of p1: %zu\n", sizeof(p1));
+    printf("Size of c1: %zu\n", sizeof(c1));
 
     p1.x = 100;
     p1.y = 200;

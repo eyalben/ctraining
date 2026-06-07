@@ -64,15 +64,15 @@ int main(void)
     free(line);
 
     /* (2) Packed Structures */
-    printf("Size of ex1: %ld\n", sizeof(struct ex1));
-    printf("Size of ex2: %ld\n", sizeof(struct ex2));
-    printf("Size of pex1: %ld\n", sizeof(struct pex1));
-    printf("Size of pex2: %ld\n", sizeof(struct pex2));
+    printf("Size of ex1: %zu\n", sizeof(struct ex1));
+    printf("Size of ex2: %zu\n", sizeof(struct ex2));
+    printf("Size of pex1: %zu\n", sizeof(struct pex1));
+    printf("Size of pex2: %zu\n", sizeof(struct pex2));
 
     struct ex1 boo[2];
     struct pex1 yaa[2];
-    printf("Size of boo: %ld\n", sizeof(boo));
-    printf("Size of yaa: %ld\n", sizeof(yaa));
+    printf("Size of boo: %zu\n", sizeof(boo));
+    printf("Size of yaa: %zu\n", sizeof(yaa));
 
 
 
