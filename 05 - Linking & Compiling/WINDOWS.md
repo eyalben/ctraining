@@ -1,4 +1,4 @@
-# .lib is a collection of .obj files and should have be treated equally
+# .lib is a collection of .obj files and should be treated equally
 
 .text: Code 
 .data: Initialized data
@@ -80,7 +80,7 @@ dumpbin /IMPORTS one.dll
 
 # DUMPBIN
 dumpbin /SYMBOLS main.obj
-> We can see UDNEF on hello()
+> We can see UNDEF on hello()
 dumpbin /ALL main.obj /OUT:main.dumpbin.txt
 dumpbin /ALL one.lib /OUT:one.dumpbin.txt
 

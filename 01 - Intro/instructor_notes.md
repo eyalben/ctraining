@@ -10,7 +10,7 @@
 - => Recent years transition back to compiled languages (go, swift, rust)
 - => Android vs iPhone development and simulator (difference between swift to java)
 - => Apple's architecture migration (+Rosetta)
-- **Disclaimer:** Starting from the bottom to make sure eveyone understand
+- **Disclaimer:** Starting from the bottom to make sure everyone understands
 
 ## Part 1 - Intro
 
@@ -44,4 +44,4 @@
 * Linux Kernel + Windows in C
 * Since 1972 and kicking! (In top 3 most common for long time)
 * Writing C will help you understand how computers work
-* as a user you dont need to install packages to support it will work on any computer! (From the strongest to the shittiest)
+* as a user you don't need to install packages to support it will work on any computer! (From the strongest to the shittiest)
