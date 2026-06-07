@@ -119,20 +119,11 @@ main.c  →  #include "math.h"
 
 ---
 
-## 5. Namespaces & Name Mangling
+## 5. Namespaces
 
 C function names share **one global namespace** — no two functions can have
-the same name, and C does **not** support overloading (`redefinition` error).
-
-C++ encodes parameter types into the symbol name (mangling), so overloading
-works:
-
-| Language | `sum(int, int)` | `sum(int, int, int)` |
-|----------|-----------------|----------------------|
-| C | `sum` | `sum` (collision!) |
-| C++ | `_Z3sumii` | `_Z3sumiii` |
-
-Decode with `c++filt`: `$ c++filt _Z3sumii` → `sum(int, int)`.
+the same name, and C does **not** support overloading (defining a second
+`sum` with different parameters gives a `redefinition` error).
 
 ### Avoiding collisions in C
 
@@ -147,14 +138,13 @@ Decode with `c++filt`: `$ c++filt _Z3sumii` → `sum(int, int)`.
 ### Create & link
 
 ```bash
-$ gcc -shared -fPIC math.c -o libmath.so   # build the library
-$ gcc main.c -L. -lmath -o my_app          # link against it
+$ gcc -shared math.c -o libmath.so   # build the library
+$ gcc main.c -L. -lmath -o my_app    # link against it
 ```
 
 | Flag | Meaning |
 |------|---------|
 | `-shared` | Create a library, not an executable |
-| `-fPIC` | Position Independent Code (loadable anywhere in RAM) |
 | `-L.` | Look for libraries in the current folder |
 | `-lmath` | Link `libmath.so` (adds `lib` prefix + `.so` suffix) |
 
