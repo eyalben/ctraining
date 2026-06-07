@@ -29,14 +29,14 @@ int main(void)
 
     /* Data Section (r/o) */
     char *question = "Hodor?";
-    printf("Size of question: %ld\n", sizeof(question));
+    printf("Size of question: %zu\n", sizeof(question));
 
     /* Illegal: */
     /* question[5] = "!"; */
 
     /* Global Variables */
-    printf("Size of g_question1: %ld\n", sizeof(g_question1));
-    printf("Size of g_question2: %ld\n", sizeof(g_question2));
+    printf("Size of g_question1: %zu\n", sizeof(g_question1));
+    printf("Size of g_question2: %zu\n", sizeof(g_question2));
     
     g_question1[5] = '!';
     printf("Hodor? %s\n", g_question1);

@@ -75,7 +75,7 @@ int main(void)
     };
 
     /* (3) Sizeofs */
-    printf("%ld %ld %ld %ld \n", sizeof(a4), sizeof(a4[0]), sizeof(a4[0][0]), sizeof(a4[0][0][0]));
+    printf("%zu %zu %zu %zu \n", sizeof(a4), sizeof(a4[0]), sizeof(a4[0][0]), sizeof(a4[0][0][0]));
 
 
     return 0;
