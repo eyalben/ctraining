@@ -4,7 +4,7 @@ Show Preprocessor output using:
 `gcc -E file.c`
 
 1. Use #define (no #include) to show how it works in search replace
-2. Use #ifdef ifndef to show that files are not alawys duplicate:
+2. Use #ifdef ifndef to show that files are not always duplicate:
 
 ```c
 #ifndef BLA
@@ -63,7 +63,7 @@ RETURN
 PUSH 10
 PUSH 20
 CALL SUM
-EAX contians the result
+EAX contains the result
 ```
 int32_t exp(int32_t base, int32_t value, int32_t)
 
